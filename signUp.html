@@ -1,0 +1,48 @@
+<html>
+
+    <head>
+    <title>SignUp</title>
+    <link href="signUp.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Limelight|Molengo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+    </head>
+    <body>
+        <div id="formContainer">
+            <center>
+                <img id="logo" src="android-icon-192x192.png">  
+                <p id="logo-name">Heartful</p>
+            </center>
+<!--        <label for="formEmail">Your Email</label>-->
+            <div class="inner-addon left-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+    <input type="email" id="formEmail" placeholder="Your Email">  
+</div>
+        <br>
+<!--            <label for="formPassword">Password</label>-->
+            <div class="inner-addon left-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+    <input type="password" id="formPassword" placeholder="Password">
+            </div>
+            <br>
+            <button id="signUp-button" onclick="signUp()">Sign up</button>
+        </div>
+        
+    <script src="signUp.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDJNQRwOA3ndOdi9paH1hhq20yj1kDFgeY",
+    authDomain: "heartful-dc3ac.firebaseapp.com",
+    databaseURL: "https://heartful-dc3ac.firebaseio.com",
+    projectId: "heartful-dc3ac",
+    storageBucket: "heartful-dc3ac.appspot.com",
+    messagingSenderId: "1029282124604"
+  };
+  firebase.initializeApp(config);
+</script>
+    </body>
+</html>
