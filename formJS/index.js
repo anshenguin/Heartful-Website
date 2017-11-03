@@ -53,12 +53,11 @@ function submit(){
         }
     }
     
-    $('.messageCheckbox13').click(function() {
-    if ($(this).is(':checked')) {
+    if ($('.messageCheckbox13').is(':checked')) {
         checkedValue.push($(".messageCheckbox14").val());
-        console.log("hero" +checkedValue);
+//        console.log("hero" +checkedValue);
     }
-   });
+  
     
     for(var i = 0 ; i < 15 ; i ++ ){
         if(typeof $('#mcategory'+i+':selected').val()!=="undefined"){
