@@ -2,6 +2,16 @@
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }   
+$("#background").hide();
+var checkedValue=[];
+var checkedValueState =[];
+var category = {};
+var state = {};
+var valueName;
+var searchname;
+var websiteLink;
+var contactPeople;
+var email;
 //
 //$('.selectall').click(function() {
 //    if ($(this).is(':checked')) {
@@ -45,13 +55,9 @@ $('.messageCheckbox13').click(function() {
     }
 });
 
-$("#background").hide();
-
 function submit(){
    
 //    console.log($(".paddingTopics").text());
-    var checkedValue=[];
-    var checkedValueState =[];
     for (var m = 1; m < 13 ; m++ ){
         if(typeof $('.messageCheckbox'+m+':checked').val()!=="undefined"){
 //            console.log("chal gya");
@@ -76,9 +82,8 @@ function submit(){
     }
     
    
-    var category = {};
      for(var i = 0 ; i <checkedValue.length; i++ ){
-            category[i]= checkedValue[i];
+            category[i] = checkedValue[i];
         }
     for (var n = 1; n < 35 ; n++ ){
         if(typeof $('#checkbox'+n+':checked').val()!=="undefined"){
@@ -97,16 +102,15 @@ function submit(){
         }
     }
    
-        var state = {};
         for(var j = 0 ; j < checkedValueState.length ; j++){
             state[j] = checkedValueState[j];
         }
 //    console.log(checkedValue);
-    var valueName = $('#ngoName').val();
-    var searchname = valueName.toLowerCase();
-    var websiteLink = $('#websiteLink').val();
-    var contactPeople = $('#contactPeople').val();
-    var email = $('#email').val();
+    valueName = $('#ngoName').val();
+    searchname = valueName.toLowerCase();
+    websiteLink = $('#websiteLink').val();
+    contactPeople = $('#contactPeople').val();
+    email = $('#email').val();
     
     
 //    var radioyes1 = document.getElementById('yes1').checked;
@@ -123,9 +127,7 @@ function submit(){
     else if (!validateEmail(email)){
         alert("Please enter a valid email address! ");
     }
-    else if(radioyes1 == false && radiono1 == false || radioyes2 == false && radiono2 == false){
-            alert("Please select atleast one option 1");
-        }
+
 
     else if (checked == 0 && checkedMobile == 0){
         alert("Please select atleast one option");
@@ -146,7 +148,7 @@ function submit(){
 
 function signUp(){
     var rootRefForm = firebase.database().ref().child("NgoList").push();
-    rootRef.set({mOrgname: valueName, mImage: "https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg", mCategory:"testing",mState:state,
+    rootRefForm.set({mOrgname: valueName, mImage: "https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg", mCategory:"testing",mState:state,
                  mCategoryNew:category,
                  mOrginfo: "This is also test",searchName:searchname}).then(function() {
     console.log('Synchronization succeeded');
