@@ -2,21 +2,25 @@
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }   
+//
+//$('.selectall').click(function() {
+//    if ($(this).is(':checked')) {
+//        $('.all').attr('checked', true);
+//    } else {
+//        $('.all').attr('checked', false);
+//    }
+//});
+//$('.selectmAll').click(function() {
+//    if ($(this).is(':selected')) {
+//        $('.mAll').attr('selected', true);
+//    } else {
+//        $('.mAll').attr('selected', false);
+//    }
+//});
 
-$('.selectall').click(function() {
-    if ($(this).is(':checked')) {
-        $('.all').attr('checked', true);
-    } else {
-        $('.all').attr('checked', false);
-    }
-});
-$('.selectmAll').click(function() {
-    if ($(this).is(':selected')) {
-        $('.mAll').attr('selected', true);
-    } else {
-        $('.mAll').attr('selected', false);
-    }
-});
+//$("#mcategory15").is(':selected'){
+//    
+//}
 var mq = window.matchMedia( "(max-width: 570px)" );
 if (mq.matches) {
   $("#laptopScreen1").hide();
@@ -40,7 +44,11 @@ $('.messageCheckbox13').click(function() {
        $(".messageCheckbox14").fadeOut(); 
     }
 });
+
+$("#background").hide();
+
 function submit(){
+   
 //    console.log($(".paddingTopics").text());
     var checkedValue=[];
     var checkedValueState =[];
@@ -67,7 +75,6 @@ function submit(){
         }
     }
     
-   
    
     var category = {};
      for(var i = 0 ; i <checkedValue.length; i++ ){
@@ -101,18 +108,17 @@ function submit(){
     var contactPeople = $('#contactPeople').val();
     var email = $('#email').val();
     
-
     
-    var radioyes1 = document.getElementById('yes1').checked;
-        var radiono1 = document.getElementById('no1').checked;
-        var radioyes2 = document.getElementById('yes2').checked;
-        var radiono2 = document.getElementById('no2').checked;
+//    var radioyes1 = document.getElementById('yes1').checked;
+//        var radiono1 = document.getElementById('no1').checked;
+//        var radioyes2 = document.getElementById('yes2').checked;
+//        var radiono2 = document.getElementById('no2').checked;
     var checked = $('#laptopScreen1,#laptopScreen2 ').find(':checked').length;
     var checkedMobile = $("#exampleFormControlSelect2,#exampleFormControlSelect1").find(":selected").length;
 //    console.log(checkedMobile);
     var terms = document.getElementById('terms').checked;
     if ( valueName == 0 || websiteLink == 0 || contactPeople == 0 || email == 0 ){
-        alert("Please fill the text")
+        alert("Please fill the text");
     }
     else if (!validateEmail(email)){
         alert("Please enter a valid email address! ");
@@ -128,19 +134,70 @@ function submit(){
         alert("Please carefully read all the terms and conditions");
     }
     else{
-        
-        var rootRef = firebase.database().ref().child("NgoList").push();
-    rootRef.set({mOrgname: valueName, mImage: "https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg", mCategory:"testing",mState:state,
-                 mCategoryNew:category,
-                 mOrginfo: "This is also test",searchName:searchname}).then(function() {
-    console.log('Synchronization succeeded');
-        window.location.href = "signUp.html";
-  })
-  .catch(function(error) {
-    console.log('Synchronization failed');
+         $("#form").fadeOut(function(){
+       $("#background").fadeIn(); 
     });
+        
         
         }
             
 }
+
+
+function signUp(){
+    var rootRefForm = firebase.database().ref().child("NgoList").push();
+    rootRef.set({mOrgname: valueName, mImage: "https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg", mCategory:"testing",mState:state,
+                 mCategoryNew:category,
+                 mOrginfo: "This is also test",searchName:searchname}).then(function() {
+    console.log('Synchronization succeeded');
+//        window.location.href = "signUp.html";
+  })
+  .catch(function(error) {
+    console.log('Synchronization failed');
+    });
+var email=document.getElementById("formEmail").value;
+//    window.alert(email);
+  //  window.location.href ="signin.html" ;
+    var password=document.getElementById("formPassword").value;
+//    console.log(email);
+//    console.log(password);
+firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+//    var user = result.user;
+    var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
+    var can_post = true;
+    var userName ="";
+    var imageLink="";
+    rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName}).then(function() {
+    console.log('Synchronization succeeded');
+        window.location.href = "heartful.html";
+  })
+  .catch(function(error) {
+    console.log('Synchronization failed');
+    });
+   
+//  });
+    
+}).catch(function(error) {
+  // Handle Errors here.
+    console.log('test');
+  var errorCode = error.code;
+  var errorMessage = error.message;
+    if (errorCode == 'auth/weak-password') {
+    alert(errorMessage);
+    }
+        if (errorCode == 'auth/email-already-in-use') {
+    alert(errorMessage);
+        }
+            if (errorCode == 'auth/invalid-email') {
+    alert(errorMessage);
+            }
+                if (errorCode == 'auth/operation-not-allowed') {
+    alert(errorMessage);
+                }
+  // ...
+});
+ 
+    
+}
+ 
 
