@@ -1,4 +1,30 @@
- function validateEmail(email) {
+var file;
+$("#logoPreview").hide();
+//Preview Logo
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('#logoPreview').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+            file = input.files[0];
+//            console.log(file);
+            $("#logoPreview").show();
+            
+//            var test =  $("#logoNgo").val();
+//    console.log(test);
+        }
+    }
+    
+    $("#logoNgo").change(function(){
+        readURL(this);
+    });
+
+
+function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }   
@@ -57,7 +83,10 @@ $('.messageCheckbox13').click(function() {
 
 function submit(){
    
-//    console.log($(".paddingTopics").text());
+//    console.log($(".paddingTopics").text());      
+                console.log(file);
+                
+    
     for (var m = 1; m < 13 ; m++ ){
         if(typeof $('.messageCheckbox'+m+':checked').val()!=="undefined"){
 //            console.log("chal gya");
@@ -147,8 +176,26 @@ function submit(){
 
 
 function signUp(){
+
+    var storageRef = firebase.storage().ref('LogoImages/' + file.name);
+    var task = storageRef.put(file);
+    
+    task.on('state_changed',
+               
+               function progress(snapshot){
+           
+        },
+                
+        function error(err){
+            
+        },
+                
+        function complete(){
+            storageRef.getDownloadURL().then(function(url){
+                imageURL = url;  
+    
     var rootRefForm = firebase.database().ref().child("NgoList").push();
-    rootRefForm.set({mOrgname: valueName, mImage: "https://ak.picdn.net/assets/cms/97e1dd3f8a3ecb81356fe754a1a113f31b6dbfd4-stock-photo-photo-of-a-common-kingfisher-alcedo-atthis-adult-male-perched-on-a-lichen-covered-branch-107647640.jpg", mCategory:"testing",mState:state,
+    rootRefForm.set({mOrgname: valueName, mImage: imageURL, mCategory:"testing",mState:state,
                  mCategoryNew:category,
                  mOrginfo: "This is also test",searchName:searchname}).then(function() {
     console.log('Synchronization succeeded');
@@ -157,6 +204,8 @@ function signUp(){
   .catch(function(error) {
     console.log('Synchronization failed');
     });
+                 });
+                    });
 var email=document.getElementById("formEmail").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;

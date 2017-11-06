@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Registeration Form</title>
+  <title>Registration Form</title>
   
   
   
@@ -24,10 +24,16 @@
     <label for="nameNgo">1. What is the name of your organisation?</label>
     <input type="text" class="form-control" id="ngoName" aria-describedby="ngoName" placeholder="Name of your organisation" >
   </div>
-  
-    
+      
+      <div class="form-group">
+    <label for="logoNgo">2. Please upload the Logo of your Organisation</label>
+    <input type="file" class="form-control" id="logoNgo">
+          
+  </div>
+   <img id="logoPreview" src="#" alt="Your Logo">
+      
       <div class="form-group" id = "laptopScreen1">
-    <label for="topics">2. What are topics on which your organisation work? </label>
+    <label for="topics">3. What are topics on which your organisation work? </label>
  <div class="row">
       <div class="col">
   <div class="checkbox">
@@ -99,7 +105,7 @@
   </div>
     
   <div class="form-group" id = "laptopScreen2">
-   <label for="states">3. In which geographical area do your organisation work? </label>
+   <label for="states">4. In which geographical area do your organisation work? </label>
       
  <div class="row">
   
@@ -210,13 +216,13 @@
         <label><input id="checkbox22" class="all" type="checkbox" value="nagaland"><span class=paddingTopics>Nagaland</span></label>
 </div>
          
-     <div class="checkbox">
-         <label><input id="checkbox23" class="all" type="checkbox" value="odisha"><span class=paddingTopics>Odisha</span></label>
-</div>
+     
  </div>
        
          <div class=col>   
-      
+      <div class="checkbox">
+         <label><input id="checkbox23" class="all" type="checkbox" value="odisha"><span class=paddingTopics>Odisha</span></label>
+</div>
       <div class="checkbox ">
   <label><input id="checkbox24" class="all" type="checkbox" value="punjab" id="Punjab"><span class=paddingTopics>Punjab</span></label>  
       </div>
@@ -273,7 +279,7 @@
     
     
 <!--     <div class="form-group"> -->
-    <label id = "mobileScreenQuestion1" for="topics">2. What are topics on which your organisation work? </label>
+    <label id = "mobileScreenQuestion1" for="topics">3. What are topics on which your organisation work? </label>
    <!-- <div class="checkbox">
       <label><input type="checkbox" value="womenempowerment"><span class=paddingTopics>Women Empowerment</span></label>
 </div>
@@ -371,7 +377,7 @@
       </select>
     </div>
   <div class="form-group">
-   <label id = "mobileScreenQuestion2" for="states">3. In which geographical area do your organisation work? </label>
+   <label id = "mobileScreenQuestion2" for="states">4. In which geographical area do your organisation work? </label>
       
     <!--  <div class="form-row align-items-center">
     <div class="col-auto">
@@ -465,7 +471,7 @@
       
       
       <div class="form-group">  
-       <label for="website">4. Provide your website homepage link here.</label>
+       <label for="website">5. Provide your website homepage link here.</label>
         <input type="website" class="form-control" id="websiteLink" aria-describedby="websiteLink" placeholder="Website Link">
         <small class=text-muted>if you have website then please provide link here.</small>
       </div>
@@ -503,14 +509,14 @@
 -->
   
    <div class="form-group">
-    <label for="nameNgo">5. Provide link through which people can contact here.</label>
+    <label for="nameNgo">6. Provide link through which people can contact here.</label>
      
     <input type="text" class="form-control" id="contactPeople" aria-describedby="contact People" placeholder="Contact">
   <small class=text-muted>It will either be an Email address, facebook page or any other social network.</small>
          </div>
          
          <div class="form-group">
-    <label for="nameNgo">6. Provide an email id through which you can post news. </label>
+    <label for="nameNgo">7. Provide an email id through which you can post news. </label>
      
     <input type="email" class="form-control " id="email" aria-describedby="contact People" placeholder="Email" >
   <small class=text-muted>This email address must be different which you provide for users. this will save app from spamming. It must be secret so that no one can post using your email.</small>
@@ -518,7 +524,7 @@
          
        <div class="form-check">
     <label class="form-check-label">   
-      <input type="checkbox" class="form-check-input" id="terms">
+      <input type="checkbox" class="form-check-input" id="terms"> &nbsp;  
       I have agreed to all the <a href=# target="_blank">Terms and Conditions.</a>
     </label>
   </div>
