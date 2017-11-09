@@ -38,6 +38,7 @@ var searchname;
 var websiteLink;
 var contactPeople;
 var email;
+
 //
 //$('.selectall').click(function() {
 //    if ($(this).is(':checked')) {
@@ -84,8 +85,8 @@ $('.messageCheckbox13').click(function() {
 function submit(){
    
 //    console.log($(".paddingTopics").text());      
-                console.log(file);
-                
+//                console.log(file);
+               
     
     for (var m = 1; m < 13 ; m++ ){
         if(typeof $('.messageCheckbox'+m+':checked').val()!=="undefined"){
@@ -165,19 +166,35 @@ function submit(){
         alert("Please carefully read all the terms and conditions");
     }
     else{
+        $("#formEmail").val(email);
          $("#form").fadeOut(function(){
        $("#background").fadeIn(); 
     });
         
         
         }
-            
+    
+//$('#email').change(function() {
+//    $('#formEmail').val($(this).val());
+//});
 }
-
 
 function signUp(){
 
-    var storageRef = firebase.storage().ref('LogoImages/' + file.name);
+    var email=document.getElementById("formEmail").value;
+//    window.alert(email);
+  //  window.location.href ="signin.html" ;
+    var password=document.getElementById("formPassword").value;
+//    console.log(email);
+//    console.log(password);
+firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
+//    var user = result.user;
+    var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
+    var can_post = true;
+    var userName ="";
+    var imageLink="";
+    rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName}).then(function() {
+        var storageRef = firebase.storage().ref('LogoImages/' + file.name);
     var task = storageRef.put(file);
     
     task.on('state_changed',
@@ -198,29 +215,18 @@ function signUp(){
     rootRefForm.set({mOrgname: valueName, mImage: imageURL, mCategory:"testing",mState:state,
                  mCategoryNew:category,
                  mOrginfo: "This is also test",searchName:searchname}).then(function() {
-    console.log('Synchronization succeeded');
+    console.log('Synchronization succeeded form ka');
 //        window.location.href = "signUp.html";
+                window.location.href = "heartful.html";
+
   })
   .catch(function(error) {
     console.log('Synchronization failed');
     });
                  });
                     });
-var email=document.getElementById("formEmail").value;
-//    window.alert(email);
-  //  window.location.href ="signin.html" ;
-    var password=document.getElementById("formPassword").value;
-//    console.log(email);
-//    console.log(password);
-firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-//    var user = result.user;
-    var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
-    var can_post = true;
-    var userName ="";
-    var imageLink="";
-    rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName}).then(function() {
-    console.log('Synchronization succeeded');
-        window.location.href = "heartful.html";
+
+    console.log('Synchronization succeeded sign up ka');
   })
   .catch(function(error) {
     console.log('Synchronization failed');
