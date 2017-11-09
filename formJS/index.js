@@ -38,7 +38,7 @@ var searchname;
 var websiteLink;
 var contactPeople;
 var email;
-
+var logoNgo;
 //
 //$('.selectall').click(function() {
 //    if ($(this).is(':checked')) {
@@ -137,6 +137,7 @@ function submit(){
         }
 //    console.log(checkedValue);
     valueName = $('#ngoName').val();
+    logoNgo = $("#logoNgo").val();
     searchname = valueName.toLowerCase();
     websiteLink = $('#websiteLink').val();
     contactPeople = $('#contactPeople').val();
@@ -151,8 +152,12 @@ function submit(){
     var checkedMobile = $("#exampleFormControlSelect2,#exampleFormControlSelect1").find(":selected").length;
 //    console.log(checkedMobile);
     var terms = document.getElementById('terms').checked;
+    
     if ( valueName == 0 || websiteLink == 0 || contactPeople == 0 || email == 0 ){
         alert("Please fill the text");
+    }
+    else if ( logoNgo == 0 ){
+        alert("It is mandatory to upload your Organisation's Logo");
     }
     else if (!validateEmail(email)){
         alert("Please enter a valid email address! ");
@@ -171,7 +176,6 @@ function submit(){
        $("#background").fadeIn(); 
     });
         
-        
         }
     
 //$('#email').change(function() {
@@ -185,8 +189,13 @@ function signUp(){
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
     var password=document.getElementById("formPassword").value;
+    var confirmPassword= document.getElementById("formConfirmPassword").value;
 //    console.log(email);
 //    console.log(password);
+    if(password !== confirmPassword){
+        alert("Password does not match with above");
+    }
+    else{
 firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
 //    var user = result.user;
     var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
@@ -215,7 +224,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
     rootRefForm.set({mOrgname: valueName, mImage: imageURL, mCategory:"testing",mState:state,
                  mCategoryNew:category,
                  mOrginfo: "This is also test",searchName:searchname}).then(function() {
-    console.log('Synchronization succeeded form ka');
+    console.log('Synchronization succeeded');
 //        window.location.href = "signUp.html";
                 window.location.href = "heartful.html";
 
@@ -226,7 +235,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                  });
                     });
 
-    console.log('Synchronization succeeded sign up ka');
+    console.log('Synchronization succeeded');
   })
   .catch(function(error) {
     console.log('Synchronization failed');
@@ -253,7 +262,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                 }
   // ...
 });
- 
+    }
     
 }
  

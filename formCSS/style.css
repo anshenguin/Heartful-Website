@@ -87,6 +87,17 @@ body{
     color: white;
     border: 2px solid #92bccc;
     width:100%;
+    margin-bottom: 10px;
+    font-family: "Limelight Molengo";
+}
+
+#formConfirmPassword{
+    padding: 10px 20px 10px 60px;
+    font-size: 20px;
+    background: rgba(17, 17, 17 , 0);
+    color: white;
+    border: 2px solid #92bccc;
+    width:100%;
     margin-bottom: 20px;
     font-family: "Limelight Molengo";
 }
@@ -102,6 +113,20 @@ input::-webkit-input-placeholder{
     color: whitesmoke;
     font-family: "Limelight Molengo";
 }
+@media only screen and (max-width : 800px)
+{
+    #formContainer{
+        width: 60%;
+    }
+
+} 
+@media only screen and (max-width : 500px){
+    #formContainer{
+        width: 90%; 
+    }
+}
+
+
 
 
 
