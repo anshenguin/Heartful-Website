@@ -103,13 +103,13 @@ var config = {
      cropped.addEventListener('click', function(e){
          title = $('#title-input').val();
          description = $('#description-input').val();
-         if (title == null || description == null){
+//         console.log(title);
+         if (title == 0 || description == 0){
     alert("Please enter some text");
 }
          
          else{
 
-        
        var storageRef = firebase.storage().ref('NewsImages/' + file.name);
         
         var task = storageRef.putString(base64encodedImage, 'data_url');
