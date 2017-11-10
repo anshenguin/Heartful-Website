@@ -453,7 +453,7 @@ function onSubmit() {
    }
 
 function forgotPassword(){
-    console.log("bhaiya g aapko ka hua");
+//    console.log("bhaiya g aapko ka hua");
     email=document.getElementById("formUsername").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
@@ -478,6 +478,6 @@ function forgotPassword(){
 //$("#test").submit(function(e) {
 //    e.preventDefault();
 //});
-function feedback(){
-
-}
+//function feedback(){
+//
+//}
