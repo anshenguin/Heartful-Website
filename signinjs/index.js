@@ -162,7 +162,7 @@ function onSignOut(){
     
 firebase.auth().signOut().then(function() {
   // Sign-out successful.
-    window.location.href = "heatful.html";
+    window.location.href = "heartful.html";
 }).catch(function(error) {
   // An error happened.
 });

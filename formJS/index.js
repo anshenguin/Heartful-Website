@@ -200,7 +200,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
 //    var user = result.user;
     var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
     var can_post = true;
-    var userName ="";
+    var userName =valueName;
     var imageLink="";
     rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName}).then(function() {
         var storageRef = firebase.storage().ref('LogoImages/' + file.name);
