@@ -26,7 +26,7 @@ $('#description-input').each(function () {
 //        Crop Photo
         
         let cropper;
-let cropperModalId = '#cropperModal';
+let cropperModalId = $('#cropperModal');
 let $jsPhotoUploadInput = $('.js-photo-upload');
 
 $jsPhotoUploadInput.on('change', function() {
@@ -101,7 +101,8 @@ var config = {
 //    window.alert(cropped);
 
      cropped.addEventListener('click', function(e){
-         
+         title = $('#title-input').val();
+         description = $('#description-input').val();
          if (title == null || description == null){
     alert("Please enter some text");
 }
