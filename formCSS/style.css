@@ -13,6 +13,15 @@ body{
   color:#00aff0 ;
  
 }
+#logoPreview{
+    height:150px;
+    padding: 0;
+    margin : 10px; 
+}
+
+#terms{
+    left: 0px;
+}
 #background{
     width: 100%;
     height: 100%;
@@ -29,12 +38,12 @@ body{
 }
 #logo{
     display: inline-block;
-    width:10%;
+    width:60px;
     margin-bottom: 30px;
 }
 #logo-name{
     display: inline-block;
-    font-size: 2.7vw;
+    font-size: 45px;
     color: whitesmoke;
     padding-left: 10px;
     font-family: "Limelight";
@@ -78,6 +87,17 @@ body{
     color: white;
     border: 2px solid #92bccc;
     width:100%;
+    margin-bottom: 10px;
+    font-family: "Limelight Molengo";
+}
+
+#formConfirmPassword{
+    padding: 10px 20px 10px 60px;
+    font-size: 20px;
+    background: rgba(17, 17, 17 , 0);
+    color: white;
+    border: 2px solid #92bccc;
+    width:100%;
     margin-bottom: 20px;
     font-family: "Limelight Molengo";
 }
@@ -93,6 +113,30 @@ input::-webkit-input-placeholder{
     color: whitesmoke;
     font-family: "Limelight Molengo";
 }
+@media only screen and (max-width : 1024px)
+{
+    #formContainer{
+        width: 60%;
+        left:20%;
+    }
+
+}
+
+@media only screen and (max-width : 650px){
+    #formContainer{
+        width: 90%; 
+        left: 5%;
+    }
+    #logo{
+        width: 50px;
+        margin-top: 12px 
+    }
+    #logo-name{
+        font-size: 35px;  
+    }
+}
+
+
 
 
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Registeration Form</title>
+  <title>Registration Form</title>
   
   
   
@@ -24,10 +24,16 @@
     <label for="nameNgo">1. What is the name of your organisation?</label>
     <input type="text" class="form-control" id="ngoName" aria-describedby="ngoName" placeholder="Name of your organisation" >
   </div>
-  
-    
+      
+      <div class="form-group">
+    <label for="logoNgo">2. Please upload the Logo of your Organisation</label>
+    <input type="file" class="form-control" id="logoNgo">
+          
+  </div>
+   <img id="logoPreview" src="#" alt="Your Logo">
+      
       <div class="form-group" id = "laptopScreen1">
-    <label for="topics">2. What are topics on which your organisation work? </label>
+    <label for="topics">3. What are topics on which your organisation work? </label>
  <div class="row">
       <div class="col">
   <div class="checkbox">
@@ -99,16 +105,11 @@
   </div>
     
   <div class="form-group" id = "laptopScreen2">
-   <label for="states">3. In which geographical area do your organisation work? </label>
+   <label for="states">4. In which geographical area do your organisation work? </label>
       
  <div class="row">
   
    <div class="col">
-<!--
-     <div class="checkbox">
-      <label><input type="checkbox" class="selectall"><span class=paddingTopics>All</span></label>
-</div>
--->
      <div class="checkbox">
   <label><input id="checkbox1" class="all" type="checkbox" value="andhra pradesh"><span class=paddingTopics>Andhra Pradesh</span>
 </label>
@@ -210,13 +211,13 @@
         <label><input id="checkbox22" class="all" type="checkbox" value="nagaland"><span class=paddingTopics>Nagaland</span></label>
 </div>
          
-     <div class="checkbox">
-         <label><input id="checkbox23" class="all" type="checkbox" value="odisha"><span class=paddingTopics>Odisha</span></label>
-</div>
+     
  </div>
        
          <div class=col>   
-      
+      <div class="checkbox">
+         <label><input id="checkbox23" class="all" type="checkbox" value="odisha"><span class=paddingTopics>Odisha</span></label>
+</div>
       <div class="checkbox ">
   <label><input id="checkbox24" class="all" type="checkbox" value="punjab" id="Punjab"><span class=paddingTopics>Punjab</span></label>  
       </div>
@@ -271,89 +272,13 @@
     
     
     
-    
-<!--     <div class="form-group"> -->
-    <label id = "mobileScreenQuestion1" for="topics">2. What are topics on which your organisation work? </label>
-   <!-- <div class="checkbox">
-      <label><input type="checkbox" value="womenempowerment"><span class=paddingTopics>Women Empowerment</span></label>
-</div>
-
-     <div class="checkbox">
-  <label><input type="checkbox" value="childempowerment"><span class=paddingTopics>Children Empowerment</span>
-</label>
-</div>
-  
-      <div class="checkbox">
-        <label><input type="checkbox" value="education"><span class=paddingTopics>Education</span></label>
-</div>
-
-    <div class="checkbox">
-      <label><input type="checkbox" value="cancer"><span class=paddingTopics>Cancer</span></label>
-</div>
-<div class="checkbox ">
-  
-  <label><input type="checkbox" value="aids"><span class=paddingTopics>AIDS</span></label>
-</div>
-    
-      <div class="checkbox">
-        <label><input type="checkbox" value="mentalhealth"><span class=paddingTopics>Mental Health</span></label>
-</div>
-
-    <div class="checkbox">
-  <label><input type="checkbox" value="environment"><span class=paddingTopics>Environment</label>
-</div>
-<div class="checkbox ">
-  
-  <label><input type="checkbox" value="blooddonation"><span class=paddingTopics>Blood Donation</label>
-</div>
  
-  <div class="checkbox ">
-  <label><input type="checkbox" value="disability"><span class=paddingTopics>Disability</span></label>
-</div>
-    
-  
-    <div class="checkbox">
-  <label><input type="checkbox" value="animalwelfare"><span class=paddingTopics>Animal Welfare</label>
-</div>
-<div class="checkbox ">
-  
-  <label><input type="checkbox" value="humanrights"><span class=paddingTopics>Human Rights</label>
-</div>
- 
-  <div class="checkbox ">
-  <label><input type="checkbox" value="economicequality"><span class=paddingTopics>Economic Equality</span></label>
-</div>
-    
-   <div class="checkbox ">
-  <label><input type="checkbox" value="others" id="others"><span class=paddingTopics>Others</span></label>
-</div>
-     <div class="form-row align-items-center">
-    <div class="col-auto">
-      <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-        <option selected>All</option>
-        <option value="woman empowerment">Women Empowerment</option>
-        <option value="child empowerment">Children Empowerment</option>
-        <option value="education">Education</option>
-         <option value="cancer">Cancer</option>
-        <option value="AIDS">AIDS</option>
-        <option value="mental health">Mental Health</option>
-         <option value="Physical Health">Physical Health</option>
-        <option value="environment">Environment</option>
-        <option value="blood donation">Blood Donation</option>
-         <option value="disability">Disability</option>
-        <option value="animal welfare">Animal Welfare</option>
-        <option value="human rights">Human Rights</option>
-       <option value="elderly">Elderly</option>
-          <option value="economic equality">Economic Equality</option>
-      </select>
-    </div>
-     </div>
-     </div>-->
+    <label id = "mobileScreenQuestion1" for="topics">3. What are topics on which your organisation work? </label>
+   
      <div class="form-group" id = "mobileScreenOptions1">
 
     <select multiple class="form-control" id="exampleFormControlSelect1">
-<!--         <option>All</option>-->
+
         <option id="mcategory1" value="Woman Empowerment">Women Empowerment</option>
         <option id="mcategory2" value="Child Empowerment">Children Empowerment</option>
         <option id="mcategory3" value="Education">Education</option>
@@ -371,61 +296,12 @@
       </select>
     </div>
   <div class="form-group">
-   <label id = "mobileScreenQuestion2" for="states">3. In which geographical area do your organisation work? </label>
+   <label id = "mobileScreenQuestion2" for="states">4. In which geographical area do your organisation work? </label>
       
-    <!--  <div class="form-row align-items-center">
-    <div class="col-auto">
-      <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
-     
-      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-        <option selected>All</option>
-        <option value="1">Andhra Pradesh</option>
-        <option value="2">Arunachal Pradesh</option>
-        <option value="3">Assam</option>
-        <option value="4">Bihar</option>
-        <option value="5">Chhattisgarh</option>
-        <option value="6">Dadra and Nagar Haveli</option>
-        <option value="7">Daman and Diu</option>
-        <option value="8">Delhi</option>
-        <option value="9">Goa</option>
-        <option value="10">Gujarat</option>
-        <option value="11">Haryana</option>
-        <option value="12">Himachal Pradesh</option>
-        <option value="13">Jammu & Kashmir</option>
-        <option value="14">Jharkhand</option>
-        <option value="15">Karnataka</option>
-        <option value="16">Kerala</option>
-        <option value="17">Madhya Pradesh</option>
-        <option value="18">Maharashtra</option>
-        <option value="19">Manipur</option>
-        <option value="20">Meghalaya</option>
-        <option value="21">Mizoram</option>
-        <option value="22">Nagaland</option>
-        <option value="23">Odisha</option>
-        <option value="24">Punjab</option>
-        <option value="25">Rajasthan</option>
-        <option value="26">Sikkim</option>
-        <option value="27">Tamil Nadu</option>
-        <option value="28">Telangana</option>
-        <option value="29">Tripura</option>
-        <option value="30">Uttar Pradesh</option>
-        <option value="31">Uttarakhand</option>
-        <option value="32">West Bengal</option>
-        <option value="33">Lakshadweep</option>
-      </select>
- 
-      
-      <input class="btn btn-primary  btn-sm" type="button" value="Add">
-        </div>
-    
-    
-    
-    </div>
-      </div>
-  --><div class="form-group" id = "mobileScreenOptions2">
+   <div class="form-group" id = "mobileScreenOptions2">
 
     <select multiple class="form-control" id="exampleFormControlSelect2">
-<!--         <option class="selectmAll">All</option>-->
+
         <option class="mAll" id="mstate1" value="andhra pradesh">Andhra Pradesh</option>
         <option class="mAll" id="mstate2" value="arunachal pradesh">Arunachal Pradesh</option>
         <option class="mAll" id="mstate3" value="assam">Assam</option>
@@ -465,52 +341,21 @@
       
       
       <div class="form-group">  
-       <label for="website">4. Provide your website homepage link here.</label>
+       <label for="website">5. Provide your website homepage link here.</label>
         <input type="website" class="form-control" id="websiteLink" aria-describedby="websiteLink" placeholder="Website Link">
         <small class=text-muted>if you have website then please provide link here.</small>
       </div>
   
-<!--
-     <div class="form-group">  
-        <label for="registration">5. Are you a registered organisation?</label>
-<br>
-       <div class="form-check form-check-inline">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="yes1" value="yes"> Yes
-  </label>
-</div>
-<div class="form-check form-check-inline">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions1" id="no1" value="no"> No
-  </label>
-</div>
-</div>
-     
-       <div class="form-group">  
-        <label for="taxExempted">6. Is donating your organisation tax exempted? </label>
-     <br>
-       <div class="form-check form-check-inline">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="yes2" value="yes"> Yes
-  </label>
-</div>
-<div class="form-check form-check-inline">
-  <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="no2" value="no"> No
-  </label>
-      </div>
-      </div>
--->
   
    <div class="form-group">
-    <label for="nameNgo">5. Provide link through which people can contact here.</label>
+    <label for="nameNgo">6. Provide link through which people can contact here.</label>
      
     <input type="text" class="form-control" id="contactPeople" aria-describedby="contact People" placeholder="Contact">
   <small class=text-muted>It will either be an Email address, facebook page or any other social network.</small>
          </div>
          
          <div class="form-group">
-    <label for="nameNgo">6. Provide an email id through which you can post news. </label>
+    <label for="email">7. Provide an email id through which you can post news. </label>
      
     <input type="email" class="form-control " id="email" aria-describedby="contact People" placeholder="Email" >
   <small class=text-muted>This email address must be different which you provide for users. this will save app from spamming. It must be secret so that no one can post using your email.</small>
@@ -518,7 +363,7 @@
          
        <div class="form-check">
     <label class="form-check-label">   
-      <input type="checkbox" class="form-check-input" id="terms">
+      <input type="checkbox" class="form-check-input" id="terms"> &nbsp;  
       I have agreed to all the <a href=# target="_blank">Terms and Conditions.</a>
     </label>
   </div>
@@ -536,7 +381,7 @@
                 <img id="logo" src="android-icon-192x192.png">  
                 <p id="logo-name">Heartful</p>
             </center>
-<!--        <label for="formEmail">Your Email</label>-->
+
             <div class="inner-addon left-addon">
                 <span class="glyphicon glyphicon-envelope"></span>
     <input type="email" id="formEmail" placeholder="Your Email">  
@@ -546,6 +391,11 @@
             <div class="inner-addon left-addon">
             <span class="glyphicon glyphicon-lock"></span>
     <input type="password" id="formPassword" placeholder="Password">
+            </div>
+            <br>
+        <div class="inner-addon left-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+    <input type="password" id="formConfirmPassword" placeholder="Confirm Password">
             </div>
             <br>
             <button id="signUp-button" onclick="signUp()">Sign up</button>
