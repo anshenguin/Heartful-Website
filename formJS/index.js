@@ -183,8 +183,12 @@ function submit(){
 //});
 }
 
-function signUp(){
+ $("#loading").hide();
 
+    function createUser(){
+        $("#signUp-button").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
     var email=document.getElementById("formEmail").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
@@ -194,15 +198,20 @@ function signUp(){
 //    console.log(password);
     if(password !== confirmPassword){
         alert("Password does not match with above");
+        $("#signUp-button").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
     }
     else{
 firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
 //    var user = result.user;
-    var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
+    var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid).child("userInfo");
     var can_post = true;
     var userName =valueName;
     var imageLink="";
-    rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName}).then(function() {
+    var ngoid = Date.now();
+    console.log(ngoid); 
+    rootRef.set({canPost: can_post, profilePicLink: imageLink, userName: userName,NGOId:ngoid}).then(function() {
         var storageRef = firebase.storage().ref('LogoImages/' + file.name);
     var task = storageRef.put(file);
     
@@ -221,7 +230,8 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                 imageURL = url;  
     
     var rootRefForm = firebase.database().ref().child("NgoList").push();
-    rootRefForm.set({mOrgname: valueName, mImage: imageURL, mCategory:"testing",mState:state,
+                
+    rootRefForm.set({mOrgname: valueName, mImage: imageURL, NGOId:ngoid, mCategory:"testing",mState:state,
                  mCategoryNew:category,
                  mOrginfo: "This is also test",searchName:searchname}).then(function() {
     console.log('Synchronization succeeded');
@@ -231,6 +241,9 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
   })
   .catch(function(error) {
     console.log('Synchronization failed');
+        $("#signUp-button").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
     });
                  });
                     });
@@ -239,15 +252,23 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
   })
   .catch(function(error) {
     console.log('Synchronization failed');
+        $("#signUp-button").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
     });
    
 //  });
     
 }).catch(function(error) {
   // Handle Errors here.
-    console.log('test');
+//    console.log('test');
   var errorCode = error.code;
   var errorMessage = error.message;
+    
+    $("#signUp-button").fadeOut(function(){
+    $("#loading").fadeIn(function(){
+     
+    
     if (errorCode == 'auth/weak-password') {
     alert(errorMessage);
     }
@@ -260,10 +281,23 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                 if (errorCode == 'auth/operation-not-allowed') {
     alert(errorMessage);
                 }
-  // ...
+        });
+  });
+    $("#loading").fadeOut(function(){
+           $('#signUp-button').fadeIn();
 });
-    }
-    
+    });
+
 }
+    }
+ function onEnter(){
+     if(event.keyCode == 13){ 
+     
+   createUser();
  
+   }
+ }
+function signUp(){
+    createUser();
+}
 

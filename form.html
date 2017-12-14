@@ -395,10 +395,11 @@
             <br>
         <div class="inner-addon left-addon">
             <span class="glyphicon glyphicon-lock"></span>
-    <input type="password" id="formConfirmPassword" placeholder="Confirm Password">
+    <input type="password" id="formConfirmPassword" onkeypress="onEnter()" placeholder="Confirm Password">
             </div>
             <br>
             <button id="signUp-button" onclick="signUp()">Sign up</button>
+        <div id="loading">Loading....</div>
         </div>
         </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>

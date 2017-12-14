@@ -338,6 +338,7 @@ $(document).ready(function() {
 var email;
     var password;
     $("#loading").hide();
+
 function login(){
     
          $("#login").fadeOut(function(){
@@ -355,19 +356,23 @@ function login(){
 // }
    firebase.auth().signInWithEmailAndPassword(email, password).then(function(result){
          var childData;
+       var can_post;
             var user = result.user;
-                var ref = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid);
+                var ref = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid).child("userInfo");
         return ref.on('value',function(snapshot) {
 //            console.log("hdkjhdkdcd" + snapshot);
             snapshot.forEach(function(childSnapshot) {
-       childData = childSnapshot.val();
-//                console.log(childData);
-                return true;
+       childData = childSnapshot.key;
+                console.log(childData); 
+                if(childData == "canPost"){
+                     can_post = childSnapshot.val();
+//                    console.log(can_post);
+                }
                     });
 //  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
   // ...
 //            console.log("isko kya hua");
-            if(childData == true){
+            if(can_post == true){
                 
             window.location.href = "signin.html";
                 }
