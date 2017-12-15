@@ -1,3 +1,39 @@
+
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('contents').style.visibility="hidden";
+      $('#load').on('mousewheel touchmove', function(e) {
+      e.preventDefault();
+});
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('contents').style.visibility="visible";
+       
+      },2000);
+    
+    
+    //Animation For Download Page//
+    setTimeout(function(){
+    $('.logo-wali').hide().fadeIn(500);
+    $('.tag-line').hide();
+    $('#playstore').hide()
+    $('.tag-line').fadeIn({duration:1000,queue:false}).animate({
+      "marginTop":"9%"
+    },{duration:1000, queue:false});
+      $('#playstore').fadeIn({duration:1000,queue:false})
+ //End of Animations for download Page//
+      
+      
+     
+      }, 2000);
+  }
+}
+
+
+
 //CODE ADDED BY ANSHUL STARTS HERE
 function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -72,37 +108,6 @@ $(document).ready(function(){
             }
         });
     });
-document.onreadystatechange = function () {
-  var state = document.readyState
-  if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
-      $('#load').on('mousewheel touchmove', function(e) {
-      e.preventDefault();
-});
-  } else if (state == 'complete') {
-      setTimeout(function(){
-         document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
-         document.getElementById('contents').style.visibility="visible";
-       
-      },2000);
-    
-    
-    //Animation For Download Page//
-    setTimeout(function(){
-    $('.logo-wali').hide().fadeIn(500);
-    $('.tag-line').hide();
-    $('.tag-line').fadeIn({duration:1000,queue:false}).animate({
-      "marginTop":"9%"
-    },{duration:1000, queue:false});
-      $('#playstore').hide().fadeIn({duration:1000,queue:false})
- //End of Animations for download Page//
-      
-      
-     
-      }, 2000);
-  }
-}
 
 /* Animations to Download Page */
 
@@ -180,7 +185,9 @@ document.onreadystatechange = function () {
 //     } // End if
 //   });
 // });
+
 //Animation feature section//
+
 $(".heading").css('opacity',0);
 $(".heading").waypoint(function(){
   $(".heading").animate({opacity:1},500)
@@ -195,9 +202,9 @@ $(".screenshot").waypoint(function(){
 $(this).animate({opacity:1},{duration:500,queue:false})
   },{offset:400});
 
-$(".screenshot").waypoint(function(){ 
-$(this).animate({"marginLeft":"0px"},{duration:500,queue:false})
-  },{offset:400});
+//$(".screenshot").waypoint(function(){ 
+//$(this).animate({"marginLeft":"0px"},{duration:500,queue:false})
+//  },{offset:400});
 
 
 $(".bullets").waypoint(function(){ 
@@ -225,9 +232,9 @@ $(".screenshot2").waypoint(function(){
 $(this).animate({opacity:1},{duration:500,queue:false})
   },{offset:400});
 
-$(".screenshot2").waypoint(function(){ 
-$(this).animate({"marginLeft":"0px"},{duration:500,queue:false})
-  },{offset:400});
+//$(".screenshot2").waypoint(function(){ 
+//$(this).animate({"marginLeft":"0px"},{duration:500,queue:false})
+//  },{offset:400});
 
 $(".bullet2").waypoint(function(){ 
 $(this).animate({opacity:1},{duration:700,queue:false})
@@ -341,9 +348,7 @@ var email;
 
 function login(){
     
-         $("#login").fadeOut(function(){
-    $("#loading").fadeIn();
-     });
+         
     email=document.getElementById("formUsername").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
@@ -354,6 +359,10 @@ function login(){
 //    alert('Please provide a valid email address');
 //    email.focus;
 // }
+    
+    $("#login").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
    firebase.auth().signInWithEmailAndPassword(email, password).then(function(result){
          var childData;
        var can_post;

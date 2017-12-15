@@ -1,3 +1,4 @@
+$("#background").hide();
 var file;
 $("#logoPreview").hide();
 //Preview Logo
@@ -28,7 +29,7 @@ function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }   
-$("#background").hide();
+
 var checkedValue=[];
 var checkedValueState =[];
 var category = {};
@@ -37,6 +38,7 @@ var valueName;
 var searchname;
 var websiteLink;
 var contactPeople;
+var donatePeople;
 var email;
 var logoNgo;
 //
@@ -141,6 +143,7 @@ function submit(){
     searchname = valueName.toLowerCase();
     websiteLink = $('#websiteLink').val();
     contactPeople = $('#contactPeople').val();
+    donatePeople = $("#donatePeople").val();
     email = $('#email').val();
     
     
@@ -153,7 +156,7 @@ function submit(){
 //    console.log(checkedMobile);
     var terms = document.getElementById('terms').checked;
     
-    if ( valueName == 0 || websiteLink == 0 || contactPeople == 0 || email == 0 ){
+    if ( valueName == 0 || email == 0 ){
         alert("Please fill the text");
     }
     else if ( logoNgo == 0 ){
@@ -186,9 +189,7 @@ function submit(){
  $("#loading").hide();
 
     function createUser(){
-        $("#signUp-button").fadeOut(function(){
-    $("#loading").fadeIn();
-     });
+        
     var email=document.getElementById("formEmail").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
@@ -197,12 +198,15 @@ function submit(){
 //    console.log(email);
 //    console.log(password);
     if(password !== confirmPassword){
-        alert("Password does not match with above");
-        $("#signUp-button").fadeOut(function(){
+        
+        alert("Password does not match with above");    
+    }
+        
+    else{
+        $("#signUp").fadeOut(function(){
     $("#loading").fadeIn();
      });
-    }
-    else{
+        
 firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
 //    var user = result.user;
     var rootRef = firebase.database().ref().child("Users").child(firebase.auth().currentUser.uid).child("userInfo");
@@ -233,17 +237,15 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                 
     rootRefForm.set({mOrgname: valueName, mImage: imageURL, NGOId:ngoid, mCategory:"testing",mState:state,
                  mCategoryNew:category,
-                 mOrginfo: "This is also test",searchName:searchname}).then(function() {
+                 mOrginfo: "This is also test",searchName:searchname, mVolunteer:websiteLink , mContact: contactPeople , mDonate:donatePeople}).then(function() {
     console.log('Synchronization succeeded');
 //        window.location.href = "signUp.html";
-                window.location.href = "heartful.html";
+                window.location.href = "index.html";
 
   })
   .catch(function(error) {
     console.log('Synchronization failed');
-        $("#signUp-button").fadeOut(function(){
-    $("#loading").fadeIn();
-     });
+        
     });
                  });
                     });
@@ -252,9 +254,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
   })
   .catch(function(error) {
     console.log('Synchronization failed');
-        $("#signUp-button").fadeOut(function(){
-    $("#loading").fadeIn();
-     });
+        
     });
    
 //  });
@@ -265,10 +265,10 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
   var errorCode = error.code;
   var errorMessage = error.message;
     
-    $("#signUp-button").fadeOut(function(){
-    $("#loading").fadeIn(function(){
+    $("#loading").fadeOut(function(){
+          $("#signUp").fadeIn(function(){ 
+       
      
-    
     if (errorCode == 'auth/weak-password') {
     alert(errorMessage);
     }
@@ -281,10 +281,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
                 if (errorCode == 'auth/operation-not-allowed') {
     alert(errorMessage);
                 }
-        });
-  });
-    $("#loading").fadeOut(function(){
-           $('#signUp-button').fadeIn();
+      }); 
 });
     });
 
