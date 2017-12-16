@@ -1,12 +1,15 @@
 
 document.onreadystatechange = function () {
   var state = document.readyState
+  console.log("pehla");
   if (state == 'interactive') {
-       document.getElementById('contents').style.visibility="hidden";
+     console.log("dusra");  
+  document.getElementById('contents').style.visibility="hidden";
       $('#load').on('mousewheel touchmove', function(e) {
       e.preventDefault();
 });
   } else if (state == 'complete') {
+      console.log("teesra");
       setTimeout(function(){
          document.getElementById('interactive');
          document.getElementById('load').style.visibility="hidden";
@@ -16,10 +19,11 @@ document.onreadystatechange = function () {
     
     
     //Animation For Download Page//
+//      console.log("chotha");
     setTimeout(function(){
     $('.logo-wali').hide().fadeIn(500);
     $('.tag-line').hide();
-    $('#playstore').hide()
+    $('#playstore').hide();
     $('.tag-line').fadeIn({duration:1000,queue:false}).animate({
       "marginTop":"9%"
     },{duration:1000, queue:false});
@@ -31,7 +35,7 @@ document.onreadystatechange = function () {
       }, 2000);
   }
 }
-
+console.log("chotha");
 
 
 //CODE ADDED BY ANSHUL STARTS HERE
@@ -348,7 +352,9 @@ var email;
 
 function login(){
     
-         
+         $("#login").fadeOut(function(){
+    $("#loading").fadeIn();
+     });
     email=document.getElementById("formUsername").value;
 //    window.alert(email);
   //  window.location.href ="signin.html" ;
@@ -359,10 +365,6 @@ function login(){
 //    alert('Please provide a valid email address');
 //    email.focus;
 // }
-    
-    $("#login").fadeOut(function(){
-    $("#loading").fadeIn();
-     });
    firebase.auth().signInWithEmailAndPassword(email, password).then(function(result){
          var childData;
        var can_post;
