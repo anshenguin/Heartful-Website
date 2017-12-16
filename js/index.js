@@ -349,7 +349,10 @@ var email;
 function login(){
     
          
-   
+    email=document.getElementById("formUsername").value;
+//    window.alert(email);
+  //  window.location.href ="signin.html" ;
+    password=document.getElementById("formPassword").value;
 //      var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 //
 //    if (!filter.test(email)) {
@@ -358,77 +361,9 @@ function login(){
 // }
     
     $("#login").fadeOut(function(){
-        ActualLogin();
+    $("#loading").fadeIn();
      });
-   //////
-
-        
-  // Handle Errors here.
-//  var errorCode = error.code;
-//  var errorMessage = error.message;
-//         
-////        $("#login").fadeOut(function(){
-////    $("#loading").fadeIn(function(){
-//        
-//    
-//  if (errorCode === 'auth/wrong-password') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/account-exists-with-different-credential') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/invalid-credential') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/operation-not-allowed') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/user-disabled') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/user-not-found') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/invalid-verification-code') {
-//    alert(errorMessage);
-//  } 
-//        else if (errorCode === 'auth/invalid-verification-id') {
-//    alert(errorMessage);
-//  } 
-//        else if(errorCode === "auth/invalid-email"){
-////            $("#login").hide();
-//            alert(errorMessage);
-////            $("#loading").fadeIn();
-//        }
-        
-//        else {
-////       window.location.href = "signin.html";
-//             $("#login-button").fadeOut();
-//  }
-//       
-//  console.log(error);
-//            });
-//     });
-        
-//       $("#loading").fadeOut(function(){
-//           $('#login').fadeIn();
-//       });    
-
-//});
-    
-
-     }
-
-function ActualLogin(){ 
-            $("#loading").fadeIn(function(){
-                                 
-                                 email=document.getElementById("formUsername").value;
-//    window.alert(email);
-  //  window.location.href ="signin.html" ;
-    password=document.getElementById("formPassword").value;
-    ////
-    
-    firebase.auth().signInWithEmailAndPassword(email, password).then(function(result){
+   firebase.auth().signInWithEmailAndPassword(email, password).then(function(result){
          var childData;
        var can_post;
             var user = result.user;
@@ -457,11 +392,13 @@ function ActualLogin(){
     
   
     }).catch(function(error) {
-    var errorCode = error.code;
+        
+  // Handle Errors here.
+  var errorCode = error.code;
   var errorMessage = error.message;
          
-//        $("#login").fadeOut(function(){
-//    $("#loading").fadeIn(function(){
+        $("#login").fadeOut(function(){
+    $("#loading").fadeIn(function(){
         
     
   if (errorCode === 'auth/wrong-password') {
@@ -494,17 +431,23 @@ function ActualLogin(){
 //            $("#loading").fadeIn();
         }
         
-        $("#loading").fadeOut(function(){
-    $("#login").fadeIn();
+//        else {
+////       window.location.href = "signin.html";
+//             $("#login-button").fadeOut();
+//  }
+//       
+  console.log(error);
+            });
      });
+        
+       $("#loading").fadeOut(function(){
+           $('#login').fadeIn();
+       });    
+
+});
     
 
-    });
-                                 });
-
-     
-}
-             
+     }
 
 function onEnter(){
  if(event.keyCode == 13){ 
