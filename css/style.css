@@ -736,6 +736,9 @@ display:inline;
     color:white;
     padding:8%;
   }
+      .youtube,.facebook,.twitter{
+        margin: 5px;
+      }
   .logo1{
     width:11%;
     top:-5px;
@@ -823,7 +826,7 @@ display:inline;
     opacity:1;
   }
       .top-bar.responsive{
-          height:auto;
+          height:100%;
       }
   .bullets{
     width:15%;
