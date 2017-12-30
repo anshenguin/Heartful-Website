@@ -2,7 +2,33 @@ body{
   padding:0;
   margin:0;
 }
-
+#top-bar{
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: 0 1px 1px #999;
+}
+#logo-top-bar{
+    width: 60px;
+    display: inline-block;
+    margin-left: 5%;
+    padding: 5px 0px 5px 5px;
+}
+#logo-name-top-bar{
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Limelight";
+    font-size: 35px;
+    color: #00aff0;
+    font-weight: 100;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+}
 .paddingTopics{
   padding-left:10px;
   
@@ -135,6 +161,13 @@ input::-webkit-input-placeholder{
     }
     #logo-name{
         font-size: 30px;  
+    }
+    #logo-name-top-bar{
+        font-size: 25px;
+        top: 10px;
+    }
+    #logo-top-bar{
+        width:45px;
     }
     #formEmail{
         font-size: 18px;
