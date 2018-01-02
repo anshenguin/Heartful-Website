@@ -21,7 +21,7 @@ document.onreadystatechange = function () {
     $('.tag-line').hide();
     $('#playstore').hide()
     $('.tag-line').fadeIn({duration:1000,queue:false}).animate({
-      "marginTop":"9%"
+      "marginTop":"2%"
     },{duration:1000, queue:false});
       $('#playstore').fadeIn({duration:1000,queue:false})
  //End of Animations for download Page//
