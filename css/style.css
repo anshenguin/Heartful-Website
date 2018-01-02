@@ -12,7 +12,7 @@
 .home{
   width:100%;
   height:738px;
-  background-image: url('https://s25.postimg.org/hfgryz673/10858588_380274208800828_5539200826713676481_n.jpg'); 
+  background-image: url('Images/Background/robert-collins-341231.jpg'); 
   background-repeat: no-repeat;
   background-size:100%;
   background-attachment:fixed;
@@ -21,25 +21,34 @@
   padding-top:8.5%;
 }
 .logo{
-  height:5%;
-  width:5%;
+  height:8%;
+  width:8%;
 }
+/*
 .inner{
   margin-right:22%;
 }
+*/
 .name{
-  margin-top:-8px;
-  font-family:"Limelight";
-  margin-left:10px;
-  padding-bottom:30px;
-  display:inline-block;
-  font-size:3.5vw;
-  position:absolute;
+  font-family:"Tw Cen MT Condensed";
+    width: 100%;
+  font-size:5.5vw;
   color:white;
+    font-weight: bold;
+    text-shadow:
+    -0.5px -0.5px 0 #dbdbdb,  
+     0.5px -0.5px 0 #dbdbdb,
+    -0.5px  0.5px 0 #dbdbdb,
+     0.5px  0.5px 0 #dbdbdb;
+
+    
+}
+#link-image-top{
+    display: inline-block;
+    font-weight: 600;
 }
 .tag-line{
   font-family:'Molengo', sans-serif;
-  margin-top:11%;
   color:white;
   font-size:4vw;
 }
@@ -361,22 +370,25 @@
 .top-bar .icon {
     display: none;
 }
-#logo-name{
+.logo-name{
     text-decoration: none;
     position: relative;
     top: 8px;
     display: inline-block;
-    font-family: "Limelight";
+    font-family: "Tw Cen MT Condensed";
     font-size: 33px;
     color: #00aff0;
-    font-weight: 100;
+    font-weight: 900;
     left: -5px;
+}
+#link{
+    font-weight:600;
 }
 .navigation-buttons{
   vertical-align:middle;
-  font-size:18px;
+  font-size:16px;
   text-decoration:none;
-  font-family:"Roboto:100";
+  font-family:"Roboto":100;
   padding-left:4%;
   padding-right:4%;
   display:inline-block;
@@ -668,7 +680,8 @@ display:inline;
     padding-top:150px;
   }
   .logo{
-    width:45px;
+    width:7%;
+      height:7%;
   }
   .name{font-size:45px; }
   .tag-line{font-size:40px;}
@@ -744,7 +757,6 @@ text-align: left;
 }
 @media only screen and (max-width:768px) {
   .logo-wali{
-    margin-left:-50px;
     padding-bottom:30px;
     text-align:center;
   }
@@ -783,7 +795,6 @@ text-align: left;
   .logo{
     width:15%;
     height:15%;
-    margin-left:-130px;
   }
   .home{
     background-image: url('https://s25.postimg.org/z5rnbhyjj/10858588_380274208800828_5539200826713676481_n.jpg');
@@ -799,7 +810,6 @@ text-align: left;
   }
   #playstore{
     font-size:4vw;
-    margin-top:25%; 
   }
       #container-floating:hover{
        height: 160px;   
