@@ -18,16 +18,19 @@ body{
     margin-left: 5%;
     padding: 5px 0px 5px 5px;
 }
-#logo-name-top-bar{
+.logo-name-top-bar{
     text-decoration: none;
     display: inline-block;
-    font-family: "Limelight";
+    font-family: "Tw Cen MT Condensed";
     font-size: 35px;
     color: #00aff0;
-    font-weight: 100;
+    font-weight: 900;
     margin: 0;
-    position: absolute;
+    position: relative;
     top: 10px;
+}
+#link{
+    font-weight: 600;
 }
 .paddingTopics{
   padding-left:10px;
@@ -162,9 +165,9 @@ input::-webkit-input-placeholder{
     #logo-name{
         font-size: 30px;  
     }
-    #logo-name-top-bar{
+    .logo-name-top-bar{
         font-size: 25px;
-        top: 10px;
+        top: 6px;
     }
     #logo-top-bar{
         width:45px;

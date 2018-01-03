@@ -5,6 +5,11 @@ var title;
 var date;
 var ngoId;
 
+//$('#cropperModal').modal({
+//    backdrop: 'static',
+//    keyboard: false
+//})
+
 var description;
 $('#chooseFile').bind('change', function () {
   var filename = $("#chooseFile").val();
