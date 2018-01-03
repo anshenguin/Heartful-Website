@@ -1,3 +1,9 @@
+body{
+    background-image: url(aaron-burden-29010.jpg);
+    background-size: cover;
+/*    background-repeat:   no-repeat;*/
+/*    background-position: center center; */
+}
 #top-bar{
     z-index: 500;
     position: fixed;
@@ -129,7 +135,11 @@
     }
 }
 
-@media only screen and (max-width:750px){
+@media only screen and (max-width:768px){
+    body{
+        background-image: url(kari-shea-189168.jpg);
+        background-size: cover;
+    }
     #post-news-body{
         width: 90%;
     }
@@ -154,6 +164,7 @@
     .logo-name{
         font-size: 25px;
     }
+    
 }
 .file-upload{
     display:block;

@@ -38,9 +38,8 @@ body{
 }
 .heading{
   padding-bottom:20px;
-  padding-top:30px;
+  padding-top:50px;
   color:#00aff0 ;
- 
 }
 #logoPreview{
     height:150px;
@@ -70,14 +69,18 @@ body{
     width:60px;
     margin-bottom: 30px;
 }
-#logo-name{
+.logo-name{
     display: inline-block;
-    font-size: 45px;
+    font-size: 55px;
     color: whitesmoke;
-    padding-left: 10px;
-    font-family: "Limelight";
+    padding-left: 5px;
+    font-family: "Tw Cen MT Condensed";
     text-transform: uppercase;
-}   
+    font-weight: 900;
+}       
+#link{
+    font-weight: 550;
+}
 #formEmail{
     padding: 10px 20px 10px 60px;
     font-size: 20px;
@@ -152,18 +155,23 @@ input::-webkit-input-placeholder{
 }
 
 @media only screen and (max-width : 650px){
+    
     #formContainer{
         width: 90%; 
         left: 5%;
         top:10%;
         height: 80%;
     }
+    .heading{
+        padding-top: 30px;
+    }
     #logo{
         width: 45px;
         margin-top: 12px 
     }
-    #logo-name{
-        font-size: 30px;  
+    .logo-name{
+        font-size: 30px; 
+        padding-left: 3px;
     }
     .logo-name-top-bar{
         font-size: 25px;
