@@ -1,14 +1,55 @@
-
+#top-bar{
+    z-index: 500;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: white;
+    box-shadow: 0 1px 1px #999;
+}
+#logo{
+    width: 60px;
+    display: inline-block;
+    margin-left: 5%;
+    padding: 5px 0px 5px 5px;
+}
+.logo-name{
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+    top:10px;
+    display: inline-block;
+    font-family: "Tw Cen MT Condensed";
+    font-size: 35px;
+    color: #00aff0;
+    font-weight: 900;
+}
+#link{
+    font-weight:600;
+}
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
 #back-button{
     position:absolute;
     margin: 0;
-    top:5%;
+    top:100px;
     left:2%;
     font-size: 20px;
     font-family: "Roboto Slab";
     color:whitesmoke;
     background: #f04100;
     box-shadow: 2px 2px 2px #777;
+    cursor: pointer;
 }
 
 .cropper-container {
@@ -100,11 +141,17 @@
     }
     #back-button{
         font-size: 15px;
-        top:13px;
+        top:70px;
     }
     #position{
         top: 30%;
         left:10%;
+    }
+    #logo{
+        width: 45px;
+    }
+    .logo-name{
+        font-size: 25px;
     }
 }
 .file-upload{
@@ -272,4 +319,9 @@
     width:50%;
     -webkit-appearance:none;
     appearance:none;
+}
+
+
+@media only screen and (max-width:500px){
+    
 }

@@ -2,7 +2,8 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Crop Photo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">   
+  <title>Post News</title>
   
   
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-rc.1/cropper.min.css'>
@@ -23,8 +24,13 @@
 <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css" />
 
 <body style="background: whitesmoke; background: cover; "> 
+    <div id="top-bar">
+            <img id="logo" src="Images/Logo/LogoTopBar.png">
+            <p class="logo-name">NGO</p> <p class="logo-name" id="link">Link</p></div>
     <button id="back-button" class="btn btn-default" onclick="onSignOut()">Go Back</button>
-        <h1 id="title">Post Your News</h1>
+<!--        <h1 id="title">Post Your News</h1>-->
+    <div class="outer">
+     <div class="middle">
         <form id="post-news-body" class="form-control">   
             <label class="form-control" id="title-label" for="title-input">Title</label>
             <center> <textarea id="title-input"></textarea></center>
@@ -41,7 +47,7 @@
             </div>
      <center>       
     <img class="cropped-image-preview" id="avatar-crop" src="" alt=""/></center>
-                 <div class="modal fade remove-modal" tabindex="-1" role="dialog" id="cropperModal">
+                 <div class="modal fade remove-modal" tabindex="-1" role="dialog" id="cropperModal" data-backdrop="static" data-keyboard="false">
     <div id="position" class="modal-dialog modal-lg" role="document">
         <div class="modal-content text-center">
         <button style="position: absolute;right: 10px; top: 5px; font-size: 30px; color:#00aff0; " type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -57,7 +63,8 @@
           
             <button type="button" id="upload-button"><center><i id="upload-icon" class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></center> </button>
         </form>
-        
+        </div>
+        </div>
 
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
 

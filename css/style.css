@@ -52,11 +52,9 @@
   color:white;
   font-size:4vw;
 }
-#playstore{
-  cursor:pointer;
-  margin-top:7%;
-  font-size:2vw;
-  opacity:0.5;
+.playstore{
+  width: 250px; 
+  margin-top: 25px;
 }
 #floatingDock{
   position:fixed;
@@ -685,7 +683,7 @@ display:inline;
   }
   .name{font-size:45px; }
   .tag-line{font-size:40px;}
-  #playstore{font-size:20px;}
+  .playstore{width: 200px;}
   .navigation-buttons:hover{
   text-decoration:none;
 }
@@ -799,7 +797,7 @@ text-align: left;
     top:-50px;
   }
     .tag-line{
-      padding-top:50px;
+      padding-top:80px;
     }
   .name{ 
     padding-top:5px;
@@ -811,7 +809,7 @@ text-align: left;
     height:15%;
   }
   .home{
-/*    background-image: url('https://s25.postimg.org/z5rnbhyjj/10858588_380274208800828_5539200826713676481_n.jpg');*/
+    background-image: url('Images/Background/robert-collins-341231%20mobile.jpg');
     background-repeat: no-repeat;
     height:100%;
     background-attachment:fixed;
@@ -822,9 +820,11 @@ text-align: left;
     font-size:7vw;
     margin-top:25%;
   }
+/*
   #playstore{
     font-size:4vw;
   }
+*/
       #container-floating:hover{
        height: 160px;   
       }
@@ -995,15 +995,20 @@ textarea::-webkit-input-placeholder{
 input[type="submit"]:hover{
   background-color:#475DFF;
 }
+/*
 #playstore_button{
   cursor:pointer;
   font-size:30px;
   opacity:0.5;
-/*   height:100px;
-  width:200px; */
+   height:100px;
+  width:200px; 
   margin-top:96px;
 }
-
+*/
+#playstore-bottom{
+    width: 300px;
+    margin-top: 130px;
+}
 #formUsername{
     display: block;
     border-width: 1.5px;
