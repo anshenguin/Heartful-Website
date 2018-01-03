@@ -14,7 +14,7 @@
   height:738px;
   background-image: url('Images/Background/robert-collins-341231.jpg'); 
   background-repeat: no-repeat;
-  background-size:100%;
+  background-size:cover;
   background-attachment:fixed;
 }
 .logo-wali{
@@ -671,7 +671,7 @@ display:inline;
 
 @media screen and (max-width: 1024px) {
   .home{
- background:url('https://s22.postimg.org/f34xymmtd/test.jpg');
+/* background:url('https://s22.postimg.org/f34xymmtd/test.jpg');*/
     background-repeat:no-repeat;
     margin-bottom:-93px;
     background-attachment:fixed;
@@ -690,12 +690,13 @@ display:inline;
   text-decoration:none;
 }
   .logo1{
-    width:35px;
+    width:60px;
     margin-top:5px;
       margin-left: 5%;
   }
-    #logo-name{
-        font-size: 23px;
+    .logo-name{
+        font-size: 35px;
+        top:12px;
     }
     .top-bar{
 text-align: left;
@@ -711,7 +712,7 @@ text-align: left;
     float: right;
     display: block;
     position: fixed;
-    top:18px;
+    top:28px;
       right: 15px;
   }
   .navigation-buttons{
@@ -736,7 +737,7 @@ text-align: left;
     text-decoration:none;
     position: absolute;
     right: 15px;
-    top: 18px;
+    top: 28px;
   }
   .top-bar.responsive .navigation-buttons {
     float: none;
@@ -761,6 +762,9 @@ text-align: left;
     text-align:center;
   }
   .tag-line{padding-bottom:30px;}
+    .logo-name{
+        top:11px;
+    }
 }
   @media only screen and (max-width:500px) {
     .home{
@@ -776,9 +780,19 @@ text-align: left;
   .logo1{
       position: relative;
       top: 2px;
-    width:35px;
+    width:45px;
     margin-top:1px;
   }
+      .logo-name{
+          top: 8px;
+          font-size: 25px;
+      }
+      .top-bar a.icon{
+          top: 20px;
+      }
+      .top-bar.responsive a.icon{
+          top: 20px;
+      }
   .logo-wali{
     padding-top:20%;
     margin:0 auto;
@@ -797,11 +811,11 @@ text-align: left;
     height:15%;
   }
   .home{
-    background-image: url('https://s25.postimg.org/z5rnbhyjj/10858588_380274208800828_5539200826713676481_n.jpg');
+/*    background-image: url('https://s25.postimg.org/z5rnbhyjj/10858588_380274208800828_5539200826713676481_n.jpg');*/
     background-repeat: no-repeat;
     height:100%;
     background-attachment:fixed;
-    background-size:100%;
+    background-size:cover;
     padding-bottom:50px;
   }
   .tag-line{
