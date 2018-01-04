@@ -312,14 +312,14 @@ $(document).ready(function() {
               //indicate durations of 200 and 600 milliseconds, respectively
               $('#addNgo').fadeIn( 'slow' );
           } 
-          else if (bottom < menuHeight) {
-              //at bottom set classes to show menu at bottom
-              $('#addNgo').removeClass( 'top' );
-              $('#addNgo').addClass( 'bottom' );
-              
-              //$('#hi').show();
-              $('#addNgo').fadeIn( 'slow' );
-          }
+//          else if (bottom < menuHeight) {
+//              //at bottom set classes to show menu at bottom
+//              $('#addNgo').removeClass( 'top' );
+//              $('#addNgo').addClass( 'bottom' );
+//              
+//              //$('#hi').show();
+//              $('#addNgo').fadeIn( 'slow' );
+//          }
           else {
               //somewhere in between, hide menu
               //$('#hi').hide();
