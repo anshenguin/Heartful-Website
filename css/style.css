@@ -704,7 +704,7 @@ text-align: left;
   .top-bar i{
     display:none;
   }
-  .top-bar a:not(:first-child) {display: none;}
+  .top-bar .navigation-buttons:not(:first-child) {display: none;}
   .top-bar a.icon {
     color:#00AFF0;
     text-decoration:none;
@@ -718,6 +718,7 @@ text-align: left;
     font-size:23px;
     color:white;
     text-decoration:none;
+      display: inline-block;
   }
   .navigation-buttons:hover{
     text-decoration:none;
