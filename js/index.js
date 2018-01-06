@@ -3,14 +3,23 @@ document.onreadystatechange = function () {
   var state = document.readyState
   if (state == 'interactive') {
        document.getElementById('contents').style.visibility="hidden";
-      $('#load').on('mousewheel touchmove', function(e) {
-      e.preventDefault();
-});
+//      $('#preloader').on('mousewheel touchmove', function(e) {
+//      e.preventDefault();
+//});
+      $('html, body').css({
+  'overflow': 'hidden',
+  'height': '100%'
+})
   } else if (state == 'complete') {
       setTimeout(function(){
          document.getElementById('interactive');
-         document.getElementById('load').style.visibility="hidden";
+         document.getElementById('preloader').style.visibility="hidden";
          document.getElementById('contents').style.visibility="visible";
+          
+          $('html, body').css({
+  'overflow': 'auto',
+  'height': 'auto'
+})
        
       },2000);
     
@@ -32,6 +41,28 @@ document.onreadystatechange = function () {
   }
 }
 
+
+//$(window).load(function(){
+//            setTimeout(function(){
+//                $('#preloader').velocity({
+//                    opacity : 0.1,
+//                    translateY: "-80px"
+//                }, {
+//                    duration: 400,
+//                    complete: function(){
+//                    $('#hola').velocity({
+//                    translateY : "-100%"
+//                }, {
+//                    duration: 1000,
+//                    easing: [0.7,0,0.3,1],
+//                    complete: function(){
+//                        $('.home').addClass('animate-border divide');
+//                    }
+//                })  
+//                    }
+//                })
+//            },1000)
+//        })
 
 
 //CODE ADDED BY ANSHUL STARTS HERE
