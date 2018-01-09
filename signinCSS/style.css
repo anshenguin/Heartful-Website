@@ -1,8 +1,12 @@
+html{
+    height: 100%;
+}
 body{
     background-image: url(news-laptop-background.jpg);
     background-size: cover;
 /*    background-repeat:   no-repeat;*/
 /*    background-position: center center; */
+    height: 100%;
 }
 #top-bar{
     z-index: 500;
@@ -164,6 +168,7 @@ body{
     }
     .logo-name{
         font-size: 25px;
+        top: 6px;
     }
     #position{
         position: relative;
@@ -342,5 +347,42 @@ body{
 @media only screen and (max-width:500px){
     #position{
         left: -5px;
+    }
+}
+
+.footer{
+    position:relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    bottom: -320px;
+}
+
+    .footer-bottom{
+    background-color: #00384c;
+    width: 100%;
+    }
+
+    .copyright{
+        display: inline-block;
+        position: relative;
+        left: 10%;
+        color: #aaa;
+        font-size: 15px;
+        font-family: "Roboto Slab"; 
+        margin: 0;
+        padding: 20px;
+    }
+
+@media only screen and (max-width:500px){
+    .copyright{
+        display: block;
+        padding: 0;
+        padding: 10px 0px 0px 10px;
+        font-size: 14px;
+        left: 0;
+    }
+    #adjustment-for-mobile{
+        padding-bottom: 10px;
     }
 }
