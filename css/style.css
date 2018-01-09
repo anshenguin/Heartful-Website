@@ -704,6 +704,7 @@ text-align: left;
   .top-bar i{
     display:none;
   }
+  .top-bar a:not(:first-child) {display: none;}
   .top-bar a.icon {
     color:#00AFF0;
     text-decoration:none;
