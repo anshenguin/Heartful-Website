@@ -1,5 +1,5 @@
 body{
-    background-image: url(aaron-burden-29010.jpg);
+    background-image: url(news-laptop-background.jpg);
     background-size: cover;
 /*    background-repeat:   no-repeat;*/
 /*    background-position: center center; */
@@ -59,7 +59,7 @@ body{
 }
 
 .cropper-container {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px auto; 
 }
 
 #title{
@@ -137,11 +137,12 @@ body{
 
 @media only screen and (max-width:768px){
     body{
-        background-image: url(kari-shea-189168.jpg);
-        background-size: cover;
+        background-image: url(news-phone-background.jpg);
+        background-size: 120%;
     }
     #post-news-body{
         width: 90%;
+        left: -1%;
     }
     .cropped-image-preview{
         height: 300px;
@@ -163,6 +164,10 @@ body{
     }
     .logo-name{
         font-size: 25px;
+    }
+    #position{
+        position: relative;
+        left: 2%;
     }
     
 }
@@ -335,5 +340,7 @@ body{
 
 
 @media only screen and (max-width:500px){
-    
+    #position{
+        left: -5px;
+    }
 }
