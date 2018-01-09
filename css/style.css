@@ -1245,6 +1245,13 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 
+.footer{
+    position: static;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+/*
 #footer-content-bottom{
     background-color: #00384c;
     width: 100%;
@@ -1262,6 +1269,35 @@ input[type="submit"]:hover{
     color: #aaa;
     left: 20%;
     font-family: "Roboto Slab";
+}
+*/
+    .footer-bottom{
+    background-color: #00384c;
+    width: 100%;
+    }
+
+    .copyright{
+        display: inline-block;
+        position: relative;
+    left: 10%;
+    color: #aaa;
+        font-size: 15px;
+    font-family: "Roboto Slab"; 
+        margin: 0;
+        padding: 20px;
+    }
+
+@media only screen and (max-width:500px){
+    .copyright{
+        display: block;
+        padding: 0;
+        padding: 10px 0px 0px 10px;
+        font-size: 14px;
+        left: 0;
+    }
+    #adjustment-for-mobile{
+        padding-bottom: 10px;
+    }
 }
 
 
