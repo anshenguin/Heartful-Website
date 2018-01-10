@@ -1,8 +1,12 @@
+html{
+    height: 100%;
+}
 body{
     background-image: url(news-laptop-background.jpg);
     background-size: cover;
 /*    background-repeat:   no-repeat;*/
 /*    background-position: center center; */
+    height: 100%;
 }
 #top-bar{
     z-index: 500;
@@ -164,6 +168,7 @@ body{
     }
     .logo-name{
         font-size: 25px;
+        top: 6px;
     }
     #position{
         position: relative;
@@ -342,5 +347,209 @@ body{
 @media only screen and (max-width:500px){
     #position{
         left: -5px;
+    }
+}
+
+#formUsername{
+    display: block;
+    border-width: 1.5px;
+    border-color: whitesmoke;
+    width: 80%;
+    margin: 0 auto;
+    background: whitesmoke;
+    border-bottom-color: #777;
+    border-top-color: whitesmoke;
+    color: #777;
+    padding: 8px 8px 8px 20px;
+    font-family:'Molengo', sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style:solid;
+    text-decoration: none;
+    margin-top: 10px;
+}
+#formUsername::-webkit-input-placeholder{
+    color: #00aff0;
+    font-size: 17px;
+}
+
+#formPassword{
+    display: block;
+    border-width: 1.5px;
+    border-color: whitesmoke;
+    width: 80%;
+    margin: 0 auto;
+    background: whitesmoke;
+    border-bottom-color: #777;
+    border-top-color: whitesmoke;
+    color: #777;
+    padding: 8px 8px 8px 20px;
+    font-family:'Molengo', sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style:solid;
+    text-decoration: none;
+    margin-top: -20px;
+}
+
+#formPassword::-webkit-input-placeholder{
+    color: #00aff0;
+    font-size: 17px;
+}
+
+.modal-title{
+    color: #00aff0;
+    font-size: 25px;
+}
+
+#modal-background{
+    background: whitesmoke;
+    border-radius: 10px;
+}
+
+#background-inner{
+    display: block;
+    background: whitesmoke;
+}
+
+#login-button{
+    background: #00aff0;
+    color:whitesmoke;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px 35px 10px 35px;
+    margin: -5px 20px 25px ;
+    margin-left: 10%;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #475DFF;
+}
+
+#login-button:hover{
+    box-shadow: inset 0 120px 0 0 #475dff;
+    transition: all 1s ease; 
+}
+
+#login-button:active{
+    position: relative;
+    top:-1px;
+}
+
+#close-button{
+    color: #00aff0;
+    font-size: 30px;
+}
+
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+#formUsername:focus 		{ outline:none; }
+
+#label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:11%;
+  top:15px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+#formUsername:focus ~ label, #formUsername:valid ~ label 		{
+  top:-10px;
+  font-size:14px;
+  color:#00aff0;
+}
+
+.bar 	{ position:relative; display:block; width:90%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2.1px; 
+  width:0;
+  bottom:0px; 
+    left:11%;
+  position:absolute;
+  background:#00aff0; 
+  transition:0.5s ease all; 
+  -moz-transition:0.5s ease all; 
+  -webkit-transition:0.5s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+#formUsername:focus ~ .bar:before, #formUsername:focus ~ .bar:after {
+  width:50%;
+}
+
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+#formPassword:focus 		{ outline:none; }
+
+#formPassword:focus ~ label, #formPassword:valid ~ label 		{
+  top:-10px;
+  font-size:14px;
+  color:#00aff0;
+} 
+
+#formPassword:focus ~ .bar:before, #formPassword:focus ~ .bar:after {
+  width:50%;
+}
+
+#forgot-password{
+    color: #777;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.footer{
+    position:relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    bottom: -320px;
+}
+
+    .footer-bottom{
+    background-color: #00384c;
+    width: 100%;
+    }
+
+    .copyright{
+        display: inline-block;
+        position: relative;
+        left: 10%;
+        color: #aaa;
+        font-size: 15px;
+        font-family: "Roboto Slab"; 
+        margin: 0;
+        padding: 20px;
+    }
+
+@media only screen and (max-width:500px){
+    .copyright{
+        display: block;
+        padding: 0;
+        padding: 10px 0px 0px 10px;
+        font-size: 14px;
+        left: 0;
+    }
+    #adjustment-for-mobile{
+        padding-bottom: 10px;
     }
 }

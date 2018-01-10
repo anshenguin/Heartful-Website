@@ -62,6 +62,56 @@
           
             <button type="button" id="upload-button"><center><i id="upload-icon" class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></center> </button>
         </form>
+    
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="modal-background">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login To Your Account</h5>
+        <button type="button" class="close" id="close-button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <div id="background-inner">
+            
+            <div class="group">
+                  <input type="text" id="formUsername" onkeypress="onEnter()" autocomplete="on" name="username" class="form-control" placeholder="" required spellcheck="false" />
+                <span class="highlight"></span>
+            <span class="bar"></span>
+                <label id="label">Email</label>
+            
+            </div>
+                
+                    
+                <div class="group">
+                  <input type="password" id="formPassword" onkeypress="onEnter()" name="password" class="form-control" placeholder="" required/>
+                    <span class="highlight"></span>
+            <span class="bar"></span>
+                <label id="label">Password</label>
+           
+                </div>
+            
+            <button class="btn btn-default" id="login-button" onClick="onSubmit()"><div id="login">Login</div>
+            <div id="loading">Loading....</div></button>
+            <a id="forgot-password" onclick="forgotPassword()">Forgot Password?</a> 
+          
+        </div>
+          
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+    <div class="footer">
+      <div class="footer-bottom">
+          <p class="copyright">2018 &copy; KinitoApps</p>
+          
+          <p id="adjustment-for-mobile" style="cursor: pointer;"class="copyright">Privacy and Terms</p>
+      </div>
+          </div>
         
 
 <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
@@ -69,6 +119,7 @@
     
         </body>
   <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js'></script>
+    <script src="jquery-3.2.1.min.js"></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.0.0-rc.1/cropper.min.js'></script>
 
