@@ -220,6 +220,9 @@ var config = {
 //    window.alert(cropped);
 
      cropped.addEventListener('click', function(e){
+         
+         $("#modal-loading").modal("show");
+         
          title = $('#title-input').val();
          description = $('#description-input').val();
 //         console.log(title);
@@ -273,13 +276,16 @@ snapshot.forEach(function(childSnapshot) {
                     });
         rootRef.set({Title: title, Description: description, DateAndTime: date, Image: imageURL, NGOId: ngoId}).then(function() {
     console.log('Synchronization succeeded');
+            $("#modal-loading").modal("hide");
   })
   .catch(function(error) {
     console.log('Synchronization failed');
+            $("#modal-loading").modal("hide");
     });
         });
                 }catch(Exception){
                     console.log("swag");
+            $("#modal-loading").modal("hide");
                     $(document).ready(function() {
     $("#myModal").modal();
   });

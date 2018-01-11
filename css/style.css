@@ -59,6 +59,7 @@
     font-weight: 600;
 }
 */
+
 @keyframes spin-1 {
 	0% {transform: rotate(360deg); opacity: 1;}
 	50% {transform: rotate(180deg); opacity: 0.5;}
