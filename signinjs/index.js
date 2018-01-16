@@ -310,6 +310,8 @@ snapshot.forEach(function(childSnapshot) {
 
 //Go Back
 
+
+
 function onSignOut(){
     
 firebase.auth().signOut().then(function() {

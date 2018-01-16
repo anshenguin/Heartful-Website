@@ -115,13 +115,30 @@ $("#contact_a").click(function() {
     }, 1000);
 });
 function myFunction() {
+    
     var x = document.getElementById("myTopnav");
     if (x.className === "top-bar") {
-        x.className += " responsive";
-    } else {
-        x.className = "top-bar";
+//        x.className += " responsive";
+        $(".top-bar").addClass("responsive").animate({
+            "height":"100%"
+        });
     }
+    else{
+//    } else {
+     $(".top-bar").addClass("responsive").animate({
+            "height":"10%"
+        });
+        x.className = "top-bar";
+        
+    }
+//        $(x).animate({
+//           "height":"0%" 
+//        });
+//        x.className = "top-bar";
+//        
+//    }
 }
+
 
 
 
@@ -317,6 +334,18 @@ $("#contact").waypoint(function(){
 $("#contact").waypoint(function(){
   $("#submit_button").animate({opacity:1},{duration:1000})
 });
+
+//$(".top-bar a.icon").click(function(){
+//   $(".top-bar.responsive").animate({
+//       "height":"100%"
+//   }); 
+//});
+//
+//$(".top-bar.responsive a.icon").click(function(){
+//   $(".top-bar.responsive").animate({
+//       "height":"0%"
+//   }); 
+//});
 
 // Fade In/Out addNgo button //
 $(document).ready(function() {
