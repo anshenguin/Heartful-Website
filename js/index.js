@@ -122,8 +122,7 @@ function myFunction() {
         x.className = "top-bar";
     }
 }
-
-
+ 
 
 $(document).ready(function(){
   $('.top-bar').hide()
